@@ -15,3 +15,4 @@ for(i in 1:length){
 
 HRds = HRds[-grep('salary',colnames(HRds))]
 HRds$enc_salary = encoded_salary
+detach(HRds)

@@ -8,3 +8,4 @@ train.ind = sample(seq_len(nrow(HRds)),size = smp.size)
 
 train = HRds[train.ind,]
 test = HRds[-train.ind,]
+detach(HRds)

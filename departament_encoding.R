@@ -31,3 +31,4 @@ for(i in 1:length){
 
 HRds = HRds[-grep('sales',colnames(HRds))]
 HRds$enc_sales = encoded_sales
+detach(HRds)
