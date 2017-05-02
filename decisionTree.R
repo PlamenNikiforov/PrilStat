@@ -1,6 +1,7 @@
 # Decision Tree
 
 library(caret) # for decision tree
+library(dplyr)
 library(rattle) # for plot
 library(rpart) # for plot
 
@@ -18,5 +19,5 @@ fancyRpartPlot(decisionTreeModel$finalModel) # fancy plot
 
 testData$pred <- predict(decisionTreeModel,testData) # get predictions
 testData = testData %>% mutate(accurate = 1*(left == pred))
-table(testData$pred,testData$left) # confusion matrx
+table(testData$pred,testData$left) # confusion matrix
 sum(testData$accurate)/nrow(testData) # accuracy %
