@@ -1,3 +1,5 @@
+hrdata <- HR_comma_sep
+
 for (i in 1:14999)
   if(hrdata$average_montly_hours[i] < 160){
     hrdata$average_montly_hours[i] = "low"

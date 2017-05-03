@@ -2,7 +2,7 @@
 attach(trainData) # run after partitioning
 
 glm.fit = glm(left ~ average_montly_hours + last_evaluation 
-              + time_spend_company, family = binomial)
+              + time_spend_company + satisfaction_level + number_project, family = binomial)
 
 detach(trainData)
 
