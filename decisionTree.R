@@ -5,13 +5,13 @@ library(dplyr)
 library(rattle) # for plot
 library(rpart) # for plot
 
-#HR <- HR_comma_sep # HR_comma_sep is the dataset
+#hrdata <- HR_comma_sep # HR_comma_sep is the dataset
 
-HR$left = as.factor(HR$left) # factorize
+hrdata$left = as.factor(hrdata$left) # factorize
 
-trainIndex <- createDataPartition(HR$left, p = .7,list = FALSE,times = 1) # 70%-30% split
-trainData <- HR[ trainIndex,]
-testData  <- HR[-trainIndex,]
+trainIndex <- createDataPartition(hrdata$left, p = .7,list = FALSE,times = 1) # 70%-30% split
+trainData <- hrdata[ trainIndex,]
+testData  <- hrdata[-trainIndex,]
 
 decisionTreeModel <- train(left~.,method="rpart",data=trainData) # model with all variables on the training subset
 
