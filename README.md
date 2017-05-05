@@ -91,12 +91,12 @@
 
 ## Първи модел: логистична регресия
 
-Избрали сме три променливи.
+Избрали сме четири променливи.
 
      # logistic regression
      attach(trainData) # run after partitioning
 
-     glm.fit = glm(left ~ average_montly_hours + last_evaluation 
+     glm.fit = glm(left ~ satisfaction_level + average_montly_hours + last_evaluation 
               + time_spend_company, family = binomial)
 
      detach(trainData)
@@ -116,24 +116,24 @@
 Праг 0.35:
 
      > table(glm.predTest,left) # confusion matrix
-                      left
+                     left
      glm.predTest    0    1
-                0 3231 1009
-                1  217   42
+                0 2837  210
+                1  591  861
      > mean(glm.predTest == left) # accuracy %
-     [1] 0.727495
+     [1] 0.8219604
 
 Праг 0.5:
 
      > table(glm.predTest,left) # confusion matrix
-                 left
+                     left
      glm.predTest    0    1
-                0 3399 1051
-                1   49    0
+                0 3139  567
+                1  289  504
      > mean(glm.predTest == left) # accuracy %
-     [1] 0.7555012
+     [1] 0.8097355
 
-Разликата между процентите е минимална, но при втората таблица забелязваме, че моделът не е познал изобщо напусналите.
+Разликата между процентите е минимална, но при втората таблица забелязваме, че моделът не е познал толкова добре напусналите.
 
 ***
 
@@ -231,7 +231,7 @@
 
 ### Изводи
 
-* Логистичната регресия ни дава добър % точност, но често заблуждава
+* Логистичната регресия ни дава добър % точност, но може да заблуди
 * Дърво на решенията показва резултатите в лесен за разбиране вид, с още по-голяма точност
 * Случайна гора е най-добрият от изпробваните модели
 * Може да пробваме K nearest neighbours и Cluster analysis, предвид зависимостите в данните
