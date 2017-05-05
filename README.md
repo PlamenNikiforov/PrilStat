@@ -83,6 +83,10 @@
 
 ![Корелация 2](http://i.imgur.com/gUkDqrY.png)
 
+Ще направим и boxplot-ове:
+
+![Boxplots](http://i.imgur.com/badVtTJ.png)
+
 ***
 
 ## Първи модел: логистична регресия
